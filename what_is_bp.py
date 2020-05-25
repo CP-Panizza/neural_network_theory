@@ -19,18 +19,21 @@ class One:
 
 
 if __name__ == '__main__':
-    net = One(100, 2)
+    apple_count = 100
+    totle_money = 600
+    apple_price = 2
+    net = One(apple_price, apple_count)
 
-    target = 600
 
-    for i in range(1000):
+
+    for i in range(10000):
         z = net.forword()
         print("z:", z)
-        dz = z - target
+        dz = z - totle_money
         print("dz:", dz)
         dPrice, dCount =  net.back(dz)
-        print("dPrice:", dPrice)
-        net.price += -learnning_rate * dPrice
+        print("dCount:", dCount)
+        net.count += -learnning_rate * dCount
 
     print("net.count:",net.count)
     print("net.price:", net.price)
